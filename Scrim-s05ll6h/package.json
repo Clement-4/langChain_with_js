@@ -1,6 +1,7 @@
 {
   "name": "Scrim-s05ll6h",
   "description": "https://scrimba.com/learn-langchainjs-c02t/~06",
+  "type": "module",
   "scripts": {
     "start": "vite",
     "dev": "vite",
@@ -10,6 +11,5 @@
   "dependencies": {
     "langchain": "0.0.151",
     "vite": "latest"
-  },
-  "devDependencies": {}
+  }
 }

@@ -1,4 +1,4 @@
-Main Faqs
+const scrimbaInfo = `Main Faqs
 
 What programming languages and frameworks does the platform cover?
 Our Frontend Developer Career Path uses HTML, CSS and JavaScript before moving on to React.
@@ -284,4 +284,6 @@ Find worldwide coding friends
 Meet like-minded peers on our Discord Server. Set goals and help each other to smash them through our accountabilty channels. Ask for help at any time of the day or night - there's always someone online.
 
 Power Hours to keep you focused
-A distraction-free, highly focused hour where you work on an important task that moves you forward. Power hours take place in the Scrimba Discord 4x a day in order to suit most time zones. Show up every weekday for a month, and you'll be shocked at how much progress you make!
+A distraction-free, highly focused hour where you work on an important task that moves you forward. Power hours take place in the Scrimba Discord 4x a day in order to suit most time zones. Show up every weekday for a month, and you'll be shocked at how much progress you make!`;
+
+export default scrimbaInfo;
