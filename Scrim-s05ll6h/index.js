@@ -1,33 +1,29 @@
-import "dotenv/config";
-import { RecursiveCharacterTextSplitter } from "langchain/text_splitter";
-import { HuggingFaceTransformersEmbeddings } from "@langchain/community/embeddings/huggingface_transformers";
-import { SupabaseVectorStore } from "@langchain/community/vectorstores/supabase";
-import { createClient } from "@supabase/supabase-js";
+document.addEventListener("submit", (e) => {
+  e.preventDefault();
+  progressConversation();
+});
 
-import scrimbaInfo from "./utils/scrimba-info.js";
+const openAIApiKey = process.env.OPENAI_API_KEY;
 
-try {
-  const splitter = new RecursiveCharacterTextSplitter({
-    chunkSize: 200,
-    chunkOverlap: 20,
-    separators: ["\n\n", "\n", " ", ""],
-  });
+async function progressConversation() {
+  const userInput = document.getElementById("user-input");
+  const chatbotConversation = document.getElementById(
+    "chatbot-conversation-container"
+  );
+  const question = userInput.value;
+  userInput.value = "";
 
-  const output = await splitter.createDocuments([scrimbaInfo]);
+  // add human message
+  const newHumanSpeechBubble = document.createElement("div");
+  newHumanSpeechBubble.classList.add("speech", "speech-human");
+  chatbotConversation.appendChild(newHumanSpeechBubble);
+  newHumanSpeechBubble.textContent = question;
+  chatbotConversation.scrollTop = chatbotConversation.scrollHeight;
 
-  const sbApiKey = import.meta.env.VITE_SUPABASE_API_KEY;
-  const sbUrl = import.meta.env.VITE_SUPABASE_URL_LC_CHATBOT;
-
-  const client = createClient(sbUrl, sbApiKey);
-
-  const embeddings = new HuggingFaceTransformersEmbeddings({
-    model: "Xenova/all-MiniLM-L6-v2",
-  });
-
-  await SupabaseVectorStore.fromDocuments(output, embeddings, {
-    client,
-    tableName: "documents",
-  });
-} catch (err) {
-  console.log("Error occurs : " + err.message);
+  // add AI message
+  const newAiSpeechBubble = document.createElement("div");
+  newAiSpeechBubble.classList.add("speech", "speech-ai");
+  chatbotConversation.appendChild(newAiSpeechBubble);
+  newAiSpeechBubble.textContent = result;
+  chatbotConversation.scrollTop = chatbotConversation.scrollHeight;
 }

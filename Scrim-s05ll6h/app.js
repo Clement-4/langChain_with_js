@@ -10,27 +10,24 @@ try {
   const splitter = new RecursiveCharacterTextSplitter({
     chunkSize: 200,
     chunkOverlap: 20,
+    separators: ["\n\n", "\n", " ", ""],
   });
-  const docs = await splitter.createDocuments([scrimbaInfo]);
 
-  // Embeddings model
+  const output = await splitter.createDocuments([scrimbaInfo]);
+
+  const sbApiKey = import.meta.env.VITE_SUPABASE_API_KEY;
+  const sbUrl = import.meta.env.VITE_SUPABASE_URL_LC_CHATBOT;
+
+  const client = createClient(sbUrl, sbApiKey);
+
   const embeddings = new HuggingFaceTransformersEmbeddings({
-    modelName: "Xenova/all-MiniLM-L6-v2",
+    model: "Xenova/all-MiniLM-L6-v2",
   });
 
-  // Supabase client
-  const client = createClient(
-    process.env.SUPABASE_URL,
-    process.env.SUPABASE_API_KEY
-  );
-
-  // Upload to Supabase
-  await SupabaseVectorStore.fromDocuments(docs, embeddings, {
+  await SupabaseVectorStore.fromDocuments(output, embeddings, {
     client,
     tableName: "documents",
   });
-
-  console.log("✅ Embedded and stored successfully.");
 } catch (err) {
   console.log("Error occurs : " + err.message);
 }
