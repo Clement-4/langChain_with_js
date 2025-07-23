@@ -1,7 +1,7 @@
-import {defineConfig} from "vite"
+import { defineConfig } from "vite";
 
-export default defineConfig({
-	plugins: [
-		
-	]
-})
+export default ({ mode }) => {
+  return defineConfig({
+    plugins: [],
+  });
+};
