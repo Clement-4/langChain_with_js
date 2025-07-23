@@ -4,7 +4,7 @@
 
 - Learning resource : `https://scrimba.com/learn-langchainjs-c02t/~00`
 
-- Project building the chatbot
+- Project building the chatbot, the goal is understand the foundation of working of agents not the language ( be language agnostic)
 
 - Steps: Learning the basics with js and open AI
 
@@ -77,3 +77,5 @@
    end;
    $$;
   ```
+
+- Stuck at the Open AI key - free tier expired
