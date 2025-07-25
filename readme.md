@@ -78,4 +78,16 @@
    $$;
   ```
 
-- Stuck at the Open AI key - free tier expired
+- Stuck at the Open AI key - free tier expired, but changed to the local modal
+
+```
+locally login using hugginface-cli with the token
+
+use api and folder
+
+create a repo and create it
+specify the model and tokenizer
+
+model.push_to_hub(repo_id)
+tokenizer.push_to_hub(repo_id)
+```
