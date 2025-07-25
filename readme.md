@@ -27,7 +27,7 @@
 
 - **Application working flow** ( all the steps will be stored in conversational memory)
 
-  - User input -> Open AI modal for `creating standalone question s` -> Open AI tool for `create embedding for given question` -> find the `nearest match in vector store` -> resultant vector, `conversational memory` and user input given to `ChatGPT modal` for the final answer -> will be rendered onto the dom
+  - User input -> Open AI model for `creating standalone question s` -> Open AI tool for `create embedding for given question` -> find the `nearest match in vector store` -> resultant vector, `conversational memory` and user input given to `ChatGPT model` for the final answer -> will be rendered onto the dom
 
 ## Adding the information for the vector store
 
@@ -78,10 +78,10 @@
    $$;
   ```
 
-- Stuck at the Open AI key - free tier expired, but changed to the local modal
+- Stuck at the Open AI key - free tier expired, but changed to the local model
 
 ```
-locally login using hugginface-cli with the token
+locally login using hugginface-cli with the token with write access to upload the model
 
 use api and folder
 
