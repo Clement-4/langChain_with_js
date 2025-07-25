@@ -91,3 +91,21 @@ specify the model and tokenizer
 model.push_to_hub(repo_id)
 tokenizer.push_to_hub(repo_id)
 ```
+
+- Book are your real companion ad this is always makes the life more interesting, so you are watching this enjoy your each moment. Even the cheap thrills. What are the wealth that is required, the five type of wealth that is required ( that is required by achieving some expermenting), basically it is the book that helps you to grow in personally.
+
+- Because that is the basic thing that everyone knows.
+
+- Robin Sharma, fomo -> don't just believe people blindly
+
+- Hey you are watching naa, message @ babiyonclement18@gmail.com -> only carrer related stuffs and also something that brings improvement ( self improvement )
+- TODO: check kilo code or kelo code
+
+- How to take notes
+- Brain is good at association, so learn new things with association so that it will be more deeply stored in your brain
+- Save it to the savelist so that it will be useful, but it need not to be isolated thoughts.
+- Writing is better than typing
+- Elloboration and recollection
+- Excercise, take proper rest and sleep so that it will help you be more mentally well and physically strong
+- Play more and learn more as a learner ( a playful mind )
+- Revisting regulary, because as the name suggest

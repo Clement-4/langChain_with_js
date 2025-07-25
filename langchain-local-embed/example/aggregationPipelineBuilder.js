@@ -1,4 +1,3 @@
-//TASK: is to write a function -> langchain based system for writing aggregation pipeline
 import "dotenv/config";
 import { StringOutputParser } from "@langchain/core/output_parsers";
 import { PromptTemplate } from "@langchain/core/prompts";
