@@ -1,7 +1,7 @@
 import { createClient } from "@supabase/supabase-js";
 import { RecursiveCharacterTextSplitter } from "langchain/text_splitter";
-import { Ollama } from "ollama";
 import { SupabaseVectorStore } from "@langchain/community/vectorstores/supabase";
+import { Ollama } from "ollama";
 import { OllamaEmbeddings } from "@langchain/community/embeddings/ollama";
 
 class EnhancedSupabaseVectorStore {
@@ -26,6 +26,10 @@ class EnhancedSupabaseVectorStore {
       console.error("Error generating embedding:", error);
       throw error;
     }
+  }
+
+  getClient() {
+    return this.supabase;
   }
 
   async storeDocument(content) {
