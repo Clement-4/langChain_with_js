@@ -4,11 +4,10 @@ import {
 } from "@langchain/core/runnables";
 import { PromptTemplate } from "@langchain/core/prompts";
 import { Ollama } from "@langchain/ollama";
-import { StringOutputParser } from "@langchain/core/output_parsers";
 
 const llm = new Ollama({
   host: "http://localhost:11434",
-  model: "smollm:1.7b",
+  model: "smollm2:latest",
   temperature: 0,
   maxRetries: 2,
 });

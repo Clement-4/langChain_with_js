@@ -12,7 +12,7 @@ import { StringOutputParser } from "@langchain/core/output_parsers";
 
 const llm = new Ollama({
   host: "http://localhost:11434",
-  model: "smollm:1.7b",
+  model: "smollm2:latest",
   temperature: 0,
   maxRetries: 2,
 });
@@ -28,10 +28,18 @@ const standaloneQuestionChain = standaloneQuestionPrompt
   .pipe(llm)
   .pipe(new StringOutputParser());
 
-const answerTemplate = `You are a helpful and enthusiastic support bot who can answer a given question about Scrimba based on the context provided. Try to find the answer in the context. If you really don't know the answer, say "I'm sorry, I don't know the answer to that." And direct the questioner to email help@scrimba.com. Don't try to make up an answer. Always speak as if you were chatting to a friend. Only give the text output with maximum 2 lines not more than that. Make sure you are friendly and enthusiastic. not code please.
+const answerTemplate = `You are a helpful and enthusiastic support bot who can answer questions about Scrimba using the context below.
+INSTRUCTIONS:
+- Answer using ONLY the information in the context.
+- Be friendly, enthusiastic and optimist.
+- If you don’t know the answer, say: "I'm sorry, I don't know the answer to that." and direct the user to email help@scrimba.com.
+- Do NOT make up anything.
+- Your answer MUST be in 2 short lines or less.
+- Do NOT include any code.
+
 context: {context}
 question: {question}
-answer`;
+answer:`;
 
 const answerPrompt = PromptTemplate.fromTemplate(answerTemplate);
 
@@ -59,3 +67,5 @@ const response = await chain.invoke({
   question:
     "What are the technical requirements for running Scrimba? I only have a very old laptop which is not that powerful.",
 });
+
+console.log(response);

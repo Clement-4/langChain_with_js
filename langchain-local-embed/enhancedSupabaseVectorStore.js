@@ -70,7 +70,7 @@ class EnhancedSupabaseVectorStore {
   async generateChatResponse(messages) {
     try {
       const response = await this.ollama.chat({
-        model: "smollm:1.7b",
+        model: "smollm2:latest",
         messages: messages,
         stream: false,
       });
@@ -84,7 +84,7 @@ class EnhancedSupabaseVectorStore {
   async generateCompletion(prompt, options = {}) {
     try {
       const response = await this.ollama.generate({
-        model: "smollm:1.7b",
+        model: "smollm2:latest",
         prompt: prompt,
         stream: false,
         ...options,
