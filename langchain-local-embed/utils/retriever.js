@@ -1,6 +1,6 @@
 import { OllamaEmbeddings } from "@langchain/community/embeddings/ollama";
 import { SupabaseVectorStore } from "@langchain/community/vectorstores/supabase";
-import EnhancedSupabaseVectorStore from "./enhancedSupabaseVectorStore.js";
+import EnhancedSupabaseVectorStore from "../enhancedSupabaseVectorStore.js";
 
 const store = new EnhancedSupabaseVectorStore();
 
